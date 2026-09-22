@@ -1,0 +1,15 @@
+---
+applications:
+  - name: sap-engagement-cloud-mcp
+    instances: 1
+    memory: 256M
+    disk-quota: 512M
+    buildpacks:
+      - nodejs_buildpack
+    command: npm start
+    health-check-type: http
+    health-check-http-endpoint: /health
+    timeout: 180
+    env:
+      HOST: 0.0.0.0
+      NODE_ENV: production
